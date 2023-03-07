@@ -1,4 +1,7 @@
 vezeteknev = ''
+keresztnev = ''
+szuletesiHely = ''
+szuletesiEv = ''
 
 while True:
     vezeteknev = input("Családnév: (kötelező) ")
@@ -6,4 +9,11 @@ while True:
     if vezeteknev:
         break
     
-print(vezeteknev)
+keresztnev = input("Keresztnév: ")
+szuletesiHely = input("Születési hely: ")
+szuletesiEv = input("Születési év: ")
+
+
+
+
+print(vezeteknev, keresztnev, szuletesiHely, szuletesiev)
