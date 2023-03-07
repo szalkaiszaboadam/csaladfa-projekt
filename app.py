@@ -1,16 +1,44 @@
+
+print("Válassz az alábbi opciók közül:\n\t (1) Családtörténet keresése\n\t(2) Személy keresése")
+valasztas = ""
+while True:
+    valasztas = input("\n Melyiket választod?: ")
+
+    if valasztas:
+        break
+
+
+
+csaladnev = ''
+
+
+
+while True:
+    vezeteknev = input("Családnév: (kötelező) ")
+
+    if vezeteknev:
+        break
+    
+
+
+
+
+
+
+
+
+
 vezeteknev = ''
 keresztnev = ''
 szuletesiHely = ''
 szuletesiEv = ''
 
-print("\t\tCsaládfa keresése\n")
 
-while True:
-    vezeteknev = input("Vezetéknév: (kötelező) ")
 
-    if vezeteknev:
-        break
-    
+
+
+
+
     
 keresztnev = input("Keresztnév: ")
 
