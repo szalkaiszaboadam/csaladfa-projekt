@@ -1,7 +1,7 @@
 vezeteknev = ''
 
 while True:
-    vezeteknev = input("Családnév: (köteleező) ")
+    vezeteknev = input("Családnév: (kötelező) ")
 
     if vezeteknev:
         break
