@@ -1,10 +1,11 @@
-print("Válassz az alábbi opciók közül:\n\t(1) Családtörténet keresése\n\t(2) Személy keresése\n")
+'''print("Válassz az alábbi opciók közül:\n\t(1) Családtörténet keresése\n\t(2) Személy keresése\n")
 
 valasztas = 0
 
 while valasztas not in range(1,3):
         valasztas = int(input("Melyiket választod?: "))
         
+
 
 if valasztas == 1:
     print("\n\n    Családtörténet keresése ---\n")
@@ -49,3 +50,25 @@ if valasztas == 2:
         szuletesiEv = "-"
 
     print(vezeteknev, keresztnev, szuletesiHely, szuletesiEv)
+'''
+
+print("Személy keresése:")
+
+
+vezeteknev = ''
+keresztnev = ''
+
+while True:
+    vezeteknev = input("\t ├─ Vezetéknév: ")
+
+    if vezeteknev:
+        break
+
+while True:
+    keresztnev = input("\t └─ Keresztnév: ")
+
+    if keresztnev:
+        break
+    
+
+print(vezeteknev, keresztnev)
