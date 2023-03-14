@@ -87,16 +87,16 @@ with con:
     person.append({ 'id' : id, 'lastname' : lastname, 'firstname' : firstname, 'gender' : gender, 'job' : job, 'born' : born, 'died': died})
 print(person)
 
-'''
-hazassagok = []
+
+parent = []
 with con:
   cur = con.cursor()
-  cur.execute('SELECT * FROM hazassag')
-  for hazasok in cur.fetchall():
-    id,fej,feleseg,eskuvoido,eskuvohely = hazasok
-    hazassagok.append({'id' : id,'fej' : fej,'feleseg' : feleseg,'eskuvoido' : eskuvoido,'eskuvohely' : eskuvohely})
-print(hazassagok)
-'''
+  cur.execute('SELECT * FROM parent')
+  for parent in cur.fetchall():
+    parent_id, person_id, parent_person_id, relationship = parent
+    parent.append({'parent_id' : parent_id, 'person_id' : person_id, 'parent_person_id' : parent_person_id, 'relationship' : relationship})
+print(parent)
+
 """"
 #Név bekérése:
 csaladn = input("Családnevét: ")
