@@ -71,4 +71,4 @@ while True:
         break
     
 
-print(vezeteknev, keresztnev)
+print(f"{vezeteknev} {keresztnev}")
