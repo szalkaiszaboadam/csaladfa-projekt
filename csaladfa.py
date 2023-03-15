@@ -82,8 +82,8 @@ person = []
 with con:
   cur = con.cursor()
   cur.execute('SELECT * FROM person')
-  for person in cur.fetchall():
-    id, lastname, firstname, gender, job, born, died = person
+  for p in cur.fetchall():
+    id, lastname, firstname, gender, job, born, died = p
     person.append({ 'id' : id, 'lastname' : lastname, 'firstname' : firstname, 'gender' : gender, 'job' : job, 'born' : born, 'died': died})
 print(person)
 
@@ -92,8 +92,8 @@ parent = []
 with con:
   cur = con.cursor()
   cur.execute('SELECT * FROM parent')
-  for parent in cur.fetchall():
-    parent_id, person_id, parent_person_id, relationship = parent
+  for par in cur.fetchall():
+    parent_id, person_id, parent_person_id, relationship = par
     parent.append({'parent_id' : parent_id, 'person_id' : person_id, 'parent_person_id' : parent_person_id, 'relationship' : relationship})
 print(parent)
 
