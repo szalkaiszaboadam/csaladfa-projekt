@@ -24,10 +24,10 @@ INSERT INTO marriage(datee, place) VALUES(2022-02-22, 'Kiskunfélegyháza');
 
 
 DROP TABLE IF EXISTS marriagePerson;
-CREATE TABLE marriagePerson(marriagePerson_id INTEGER PRIMARY KEY AUTOINCREMENT, marriage_id INTEGER, person_id INTEGER, FOREIGN KEY (marriage_id) REFERENCES marriage(marriage_id), FOREIGN KEY (person_id) REFERENCES person(person_id));
+CREATE TABLE marriagePerson(marriagePerson_id INTEGER PRIMARY KEY AUTOINCREMENT, marriage_id INTEGER, person_id INTEGER, relationship TEXT, FOREIGN KEY (marriage_id) REFERENCES marriage(marriage_id), FOREIGN KEY (person_id) REFERENCES person(person_id));
 
-INSERT INTO marriagePerson(marriage_id, person_id) VALUES(4, 1);
-INSERT INTO marriagePerson(marriage_id, person_id) VALUES(3, 2);
-INSERT INTO marriagePerson(marriage_id, person_id) VALUES(2, 3);
-INSERT INTO marriagePerson(marriage_id, person_id) VALUES(1, 4);
+INSERT INTO marriagePerson(marriage_id, person_id, relationship) VALUES(2, 1, 'férj');
+INSERT INTO marriagePerson(marriage_id, person_id, relationship) VALUES(2, 3, 'feleség');
+INSERT INTO marriagePerson(marriage_id, person_id, relationship) VALUES(4, 4, 'férj');
+INSERT INTO marriagePerson(marriage_id, person_id, relationship) VALUES(4, 4, 'feleség');
 
