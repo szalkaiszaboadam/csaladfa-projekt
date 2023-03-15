@@ -7,8 +7,8 @@ with con:
   cur = con.cursor()
   cur.execute('SELECT * FROM person')
   for p in cur.fetchall():
-    person_id, lastname, firstname, gender, job, born, died = p
-    person.append({ 'person_id' : person_id, 'lastname' : lastname, 'firstname' : firstname, 'gender' : gender, 'job' : job, 'born' : born, 'died': died})
+    person_id, lastname, firstname, gender, job, born, placeofbirth, died = p
+    person.append({ 'person_id' : person_id, 'lastname' : lastname, 'firstname' : firstname, 'gender' : gender, 'job' : job, 'born' : born, 'placeofbirth' : placeofbirth, 'died': died})
 
 
 parent = []
