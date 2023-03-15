@@ -97,6 +97,24 @@ with con:
     parent.append({'parent_id' : parent_id, 'person_id' : person_id, 'parent_person_id' : parent_person_id, 'relationship' : relationship})
 print(parent)
 
+marriage = []
+with con:
+  cur = con.cursor()
+  cur.execute('SELECT * FROM marriage')
+  for mar in cur.fetchall():
+    marriage_id, datee, place = mar
+    marriage.append({'marriage_id' : marriage_id, 'datee' : datee, 'place' : place})
+print(marriage)
+
+marriagePerson = []
+with con:
+  cur = con.cursor()
+  cur.execute('SELECT * FROM marriagePerson')
+  for marP in cur.fetchall():
+    marriagePerson_id, marriage_id, person_id = marP
+    marriagePerson.append({'marriagePerson_id' : marriagePerson_id, 'marriage_id' : marriage_id, 'person_id' : person_id})
+print(marriagePerson)
+
 """"
 #Név bekérése:
 csaladn = input("Családnevét: ")
