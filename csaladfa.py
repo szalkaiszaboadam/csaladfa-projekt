@@ -114,18 +114,18 @@ while True:
         break
     
 
-print(f"\n{csaladn} {keresztn}")
 
-
-
-
-
-#faj és egyébb adatok keresése:
 personID = 0
 for i in range(len(person)):
   if csaladn == person[i]['lastname'] and keresztn == person[i]['firstname']:
-    print(f"  |--> születés helye-ideje: {person[i]['born']} - {person[i]['died']}")
-    print(f"  |--> foglalkozás: {person[i]['job']} ")
+    if person[i]['died'] == None:
+      print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - {person[i]['died']})")
+    else:
+      print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+
+
+    print(f"    születés helye-ideje: ")
+    print(f"    foglalkozás: {person[i]['job']} ")
     personID = person[i]['person_id']
 
 parentApa = 0
@@ -148,7 +148,7 @@ else:
 if parentAnya > 0:
   for i in range(len(person)):
     if person[i]['person_id'] == parentAnya:
-      print(f"Anyaa: {person[i]['lastname']} {person[i]['firstname']}")
+      print(f"Anya: {person[i]['lastname']} {person[i]['firstname']}")
 else:
   print("Az anya nem szerepel az adatbázisban")  
     

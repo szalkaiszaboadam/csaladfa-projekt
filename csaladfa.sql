@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS person;
-CREATE TABLE person(person_id INTEGER PRIMARY KEY AUTOINCREMENT, lastname TEXT, firstname TEXT, gender TEXT, job TEXT, born DATE, died DATE);
+CREATE TABLE person(person_id INTEGER PRIMARY KEY AUTOINCREMENT, lastname TEXT, firstname TEXT, gender TEXT, job TEXT, born DATE, placeofbirth TEXT, died DATE);
 
-INSERT INTO person(lastname, firstname, gender, job, born, died) VALUES('Kiss', 'Árpád', 'férfi', 'rendező', 1999-02-13, NULL);
-INSERT INTO person(lastname, firstname, gender, job, born, died) VALUES('Nagy', 'Zoltán', 'férfi', 'lakberendező', 2003-04-16, 2022-10-20);
-INSERT INTO person(lastname, firstname, gender, job, born, died) VALUES('Joó', 'Mariann', 'nő', 'üveges', 1989-10-20, NULL);
-INSERT INTO person(lastname, firstname, gender, job, born, died) VALUES('Eleben', 'Elemér', 'férfi', 'asztalos', 1972-09-1, nuLL);
+INSERT INTO person(lastname, firstname, gender, job, born, placeofbirth, died) VALUES('Kiss', 'Árpád', 'férfi', 'rendező', '1999-02-13', 'Csongrád' NULL);
+INSERT INTO person(lastname, firstname, gender, job, born, placeofbirth, died) VALUES('Nagy', 'Zoltán', 'férfi', 'lakberendező', '2003-04-16', 'Budapest', '2022-10-20');
+INSERT INTO person(lastname, firstname, gender, job, born, placeofbirth, died) VALUES('Joó', 'Mariann', 'nő', 'üveges', '1989-10-20', 'Eger',  NULL);
+INSERT INTO person(lastname, firstname, gender, job, born, placeofbirth, died) VALUES('Eleben', 'Elemér', 'férfi', 'asztalos', '1972-09-01', 'Kecskemét' nuLL);
 
 DROP TABLE IF EXISTS parent;
 CREATE TABLE parent(parent_id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER, parent_person_id INTEGER, relationship TEXT, FOREIGN KEY (person_id) REFERENCES person(person_id), FOREIGN KEY (parent_person_id) REFERENCES person(person_id));
