@@ -1,3 +1,6 @@
+import os
+import sys
+
 import sqlite3 as sqlite
 con = sqlite.connect('csaladfa.db')
 
@@ -136,19 +139,17 @@ if ii < len(person):
       
       personID = person[i]['person_id']
 else:
-  for i in range(len(person)):
-    while csaladn != person[i]['lastname'] or keresztn != person[i]['firstname']:
-      while True:
-        csaladn = input("   ├─ Vezetéknév: ")
-        if csaladn:
-          break
+  print("       Az általad megadott személy nem szerepel az adatbázisunkban!") 
+  '''while True:
+    csaladn = input("   ├─ Vezetéknév: ")
+    if csaladn:
+      break
 
-      while True:
-        keresztn = input("   └─ Keresztnév: ")
-        if keresztn:
-          break
+  while True:
+    keresztn = input("   └─ Keresztnév: ")
+    if keresztn:
+      break'''
     
-   #print("   │   Az általad megadott személy nem szerepel az adatbázisunkban!")  
 
 
 
@@ -165,14 +166,24 @@ for i in range(len(parent)):
 if parentApa > 0:
   for i in range(len(person)):
     if person[i]['person_id'] == parentApa:
-       print(f" ├─ Apja: {person[i]['lastname']} {person[i]['firstname']}")
+      if person[i]['died'] == None:
+        print(f" ├─ Apja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
+        #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
+      else:
+        print(f" ├─ Apja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+        #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
 else:
   print(" │  Az apa nem szerepel az adatbázisban")
 
 if parentAnya > 0:
   for i in range(len(person)):
     if person[i]['person_id'] == parentAnya:
-      print(f" ├─ Anyja: {person[i]['lastname']} {person[i]['firstname']}")
+      if person[i]['died'] == None:
+        print(f" ├─ Anyja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
+        #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
+      else:
+        print(f" ├─ Anyja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+        #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
 else:
   print(" │  Az anya nem szerepel az adatbázisban")  
     
@@ -186,9 +197,11 @@ if gyermekID > 0:
   for i in range(len(person)):
     if person[i]['person_id'] == gyermekID:
       if person[i]['died'] == None:
-        print(f" ├─ Gyermeke: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
+        print(f" │\n ├─ Gyermeke: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
+        #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
       else:
-        print(f" ├─ Gyermeke: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+        print(f" │\n ├─ Gyermeke: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+        #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
 
  
 
