@@ -4,7 +4,6 @@ import sys
 import sqlite3 as sqlite
 con = sqlite.connect('csaladfa.db')
 
-
 person = []
 with con:
   cur = con.cursor()
@@ -169,10 +168,6 @@ if gyermekID > 0:
       else:
         print(f" │\n └─ Gyermeke: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
         #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
-
-
-
-
 
 
 
