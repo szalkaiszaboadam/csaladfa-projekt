@@ -207,7 +207,7 @@ if valasztas == 1:
     for i in range(len(person)):
       if pot_parentApa == person[i]['person_id']:
         if person[i]['died'] == None:
-          print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - )")
+          print(f"\n{person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
           print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
           print(f" │ ├─ Foglalkozása: {person[i]['job']}")
           print(f" │ └─ Neme: {person[i]['gender']}\n │")
@@ -312,7 +312,7 @@ if valasztas == 2:
     for i in range(len(person)):
       if pot_parentAnya == person[i]['person_id']:
         if person[i]['died'] == None:
-          print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - )")
+          print(f"\n{person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
           print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
           print(f" │ ├─ Foglalkozása: {person[i]['job']}")
           print(f" │ └─ Neme: {person[i]['gender']}\n │")
@@ -417,7 +417,7 @@ if valasztas == 3:
     for i in range(len(person)):
       if pot_marriagePersonID == person[i]['person_id']:
         if person[i]['died'] == None:
-          print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - )")
+          print(f"\n{person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
           print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
           print(f" │ ├─ Foglalkozása: {person[i]['job']}")
           print(f" │ └─ Neme: {person[i]['gender']}\n │")
@@ -522,7 +522,7 @@ if valasztas == 4:
     for i in range(len(person)):
       if pot_gyermekID == person[i]['person_id']:
         if person[i]['died'] == None:
-          print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - )")
+          print(f"\n{person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
           print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
           print(f" │ ├─ Foglalkozása: {person[i]['job']}")
           print(f" │ └─ Neme: {person[i]['gender']}\n │")
