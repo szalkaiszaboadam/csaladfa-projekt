@@ -7,8 +7,8 @@ with con:
   cur = con.cursor()
   cur.execute('SELECT * FROM person')
   for p in cur.fetchall():
-    person_id, lastname, firstname, gender, job, born, placeofbirth, died = p
-    person.append({ 'person_id' : person_id, 'lastname' : lastname, 'firstname' : firstname, 'gender' : gender, 'job' : job, 'born' : born, 'placeofbirth' : placeofbirth, 'died': died})
+    person_id, lastname, firstname, gender, job, placeofbirth, born, placeofdeath, died, causeofdeath = p
+    person.append({ 'person_id' : person_id, 'lastname' : lastname, 'firstname' : firstname, 'gender' : gender, 'job' : job, 'placeofbirth' : placeofbirth, 'born' : born, 'placeofdeath' : placeofdeath, 'died': died, 'causeofdeath': causeofdeath})
 
 
 parent = []
@@ -119,13 +119,21 @@ personID = 0
 for i in range(len(person)):
   if csaladn == person[i]['lastname'] and keresztn == person[i]['firstname']:
     if person[i]['died'] == None:
-      print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - {person[i]['died']})")
+      print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - )")
+      print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
+      print(f" │ ├─ Foglalkozása: {person[i]['job']}")
+      print(f" │ └─ Neme: {person[i]['gender']}\n")
     else:
       print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+      print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
+      print(f" │ ├─ Foglalkozása: {person[i]['job']} ")
+      print(f" │ ├─ Neme: {person[i]['gender']} ")
+      print(f" │ ├─ Elhalálozás helye: {person[i]['placeofdeath']}\n │ │           ├─ ideje: {person[i]['died']}\n │ │           └─ oka: {person[i]['causeofdeath']}\n")
+      
 
 
-    print(f"    születés helye-ideje: ")
-    print(f"    foglalkozás: {person[i]['job']} ")
+
+
     personID = person[i]['person_id']
 
 parentApa = 0
