@@ -97,22 +97,39 @@ if valasztas == 2:
 
 print("Személy keresése:")
 
-
 csaladn = ''
 keresztn = ''
 
 while True:
-    csaladn = input("\t ├─ Vezetéknév: ")
+    csaladn = input("   ├─ Vezetéknév: ")
 
     if csaladn:
         break
 
 while True:
-    keresztn = input("\t └─ Keresztnév: ")
+    keresztn = input("   └─ Keresztnév: ")
 
     if keresztn:
         break
     
+letezik = True
+for i in range(len(person)):
+      if csaladn != person[i]['lastname'] or keresztn != person[i]['firstname']:
+        letezik = False
+
+if letezik == False:
+  print("   │   Az általad megadott személy nem szerepel az adatbázisunkban!")
+  while True:
+    csaladn = input("   ├─ Vezetéknév: ")
+
+    if csaladn:
+        break
+
+  while True:
+    keresztn = input("   └─ Keresztnév: ")
+
+    if keresztn:
+        break
 
 
 personID = 0
@@ -122,13 +139,13 @@ for i in range(len(person)):
       print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - )")
       print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
       print(f" │ ├─ Foglalkozása: {person[i]['job']}")
-      print(f" │ └─ Neme: {person[i]['gender']}\n")
+      print(f" │ └─ Neme: {person[i]['gender']}\n │ │")
     else:
       print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
       print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
       print(f" │ ├─ Foglalkozása: {person[i]['job']} ")
       print(f" │ ├─ Neme: {person[i]['gender']} ")
-      print(f" │ ├─ Elhalálozás helye: {person[i]['placeofdeath']}\n │ │           ├─ ideje: {person[i]['died']}\n │ │           └─ oka: {person[i]['causeofdeath']}\n")
+      print(f" │ ├─ Elhalálozás helye: {person[i]['placeofdeath']}\n │ │           ├─ ideje: {person[i]['died']}\n │ │           └─ oka: {person[i]['causeofdeath']}\n │ │")
       
 
 
@@ -149,14 +166,14 @@ for i in range(len(parent)):
 if parentApa > 0:
   for i in range(len(person)):
     if person[i]['person_id'] == parentApa:
-       print(f"Apa: {person[i]['lastname']} {person[i]['firstname']}")
+       print(f" ├─ Apja: {person[i]['lastname']} {person[i]['firstname']}")
 else:
   print("Az apa nem szerepel az adatbázisban")
 
 if parentAnya > 0:
   for i in range(len(person)):
     if person[i]['person_id'] == parentAnya:
-      print(f"Anya: {person[i]['lastname']} {person[i]['firstname']}")
+      print(f" ├─ Anya: {person[i]['lastname']} {person[i]['firstname']}")
 else:
   print("Az anya nem szerepel az adatbázisban")  
     
