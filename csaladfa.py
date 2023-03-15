@@ -34,8 +34,8 @@ with con:
   cur = con.cursor()
   cur.execute('SELECT * FROM marriagePerson')
   for marP in cur.fetchall():
-    marriagePerson_id, marriage_id, person_id, relationship = marP
-    marriagePerson.append({'marriagePerson_id' : marriagePerson_id, 'marriage_id' : marriage_id, 'person_id' : person_id, 'relationship' : relationship})
+    marriagePerson_id, marriage_id, person_id = marP
+    marriagePerson.append({'marriagePerson_id' : marriagePerson_id, 'marriage_id' : marriage_id, 'person_id' : person_id})
 
 '''print(f"\n{person}")
 print(f"\n{parent}")
