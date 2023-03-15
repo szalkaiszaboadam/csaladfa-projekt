@@ -136,17 +136,19 @@ if ii < len(person):
       
       personID = person[i]['person_id']
 else:
-  while True:
-    csaladn = input("   ├─ Vezetéknév: ")
-    if csaladn:
-        break
+  for i in range(len(person)):
+    while csaladn != person[i]['lastname'] or keresztn != person[i]['firstname']:
+      while True:
+        csaladn = input("   ├─ Vezetéknév: ")
+        if csaladn:
+          break
 
-  while True:
-    keresztn = input("   └─ Keresztnév: ")
-    if keresztn:
-        break
+      while True:
+        keresztn = input("   └─ Keresztnév: ")
+        if keresztn:
+          break
     
-  print("   │   Az általad megadott személy nem szerepel az adatbázisunkban!")  
+   #print("   │   Az általad megadott személy nem szerepel az adatbázisunkban!")  
 
 
 
