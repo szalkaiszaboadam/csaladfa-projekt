@@ -7,7 +7,7 @@ INSERT INTO person(lastname, firstname, gender, job, born, died) VALUES('Joó', 
 INSERT INTO person(lastname, firstname, gender, job, born, died) VALUES('Eleben', 'Elemér', 'férfi', 'asztalos', 1972-09-1, nuLL);
 
 DROP TABLE IF EXISTS parent;
-CREATE TABLE parent(parent_id INTEGER PRIMARY KEY AUTOINCREMENT, FOREIGN KEY (person_id) REFERENCES person(person_id), FOREIGN KEY (parent_person_id) REFERENCES person(person_id), relationship TEXT);
+CREATE TABLE parent(parent_id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER, parent_person_id INTEGER, relationship TEXT, FOREIGN KEY (person_id) REFERENCES person(person_id), FOREIGN KEY (parent_person_id) REFERENCES person(person_id));
 
 INSERT INTO parent(person_id, parent_person_id, relationship) VALUES(1, 4, 'apa');
 INSERT INTO parent(person_id, parent_person_id, relationship) VALUES(2, 3, 'anya');
@@ -24,10 +24,10 @@ INSERT INTO marriage(datee, place) VALUES(2022-02-22, 'Kiskunfélegyháza');
 
 
 DROP TABLE IF EXISTS marriagePerson;
-CREATE TABLE marriagePerson(marriagePerson_id INTEGER PRIMARY KEY AUTOINCREMENT, marriage_id FOREIGN KEY, person_id FOREIGN KEY, relationship TEXT);
+CREATE TABLE marriagePerson(marriagePerson_id INTEGER PRIMARY KEY AUTOINCREMENT, marriage_id INTEGER, person_id INTEGER, FOREIGN KEY (marriage_id) REFERENCES marriage(marriage_id), FOREIGN KEY (person_id) REFERENCES person(person_id));
 
-INSERT INTO marriagePerson(marriage_id, person_id, relationship) VALUES('4', '1');
-INSERT INTO marriagePerson(marriage_id, person_id, relationship) VALUES('3', '2');
-INSERT INTO marriagePerson(marriage_id, person_id, relationship) VALUES('2', '3');
-INSERT INTO marriagePerson(marriage_id, person_id, relationship) VALUES('1', '4');
+INSERT INTO marriagePerson(marriage_id, person_id) VALUES(4, 1);
+INSERT INTO marriagePerson(marriage_id, person_id) VALUES(3, 2);
+INSERT INTO marriagePerson(marriage_id, person_id) VALUES(2, 3);
+INSERT INTO marriagePerson(marriage_id, person_id) VALUES(1, 4);
 
