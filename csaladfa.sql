@@ -9,9 +9,9 @@ INSERT INTO person(lastname, firstname, gender, job, born, died) VALUES('Eleben'
 DROP TABLE IF EXISTS parent;
 CREATE TABLE parent(parent_id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER, parent_person_id INTEGER, relationship TEXT, FOREIGN KEY (person_id) REFERENCES person(person_id), FOREIGN KEY (parent_person_id) REFERENCES person(person_id));
 
-INSERT INTO parent(person_id, parent_person_id, relationship) VALUES(1, 4, 'apa');
-INSERT INTO parent(person_id, parent_person_id, relationship) VALUES(2, 3, 'anya');
-INSERT INTO parent(person_id, parent_person_id, relationship) VALUES(3, 2, 'apa');
+INSERT INTO parent(person_id, parent_person_id, relationship) VALUES(4, 4, 'apa');
+INSERT INTO parent(person_id, parent_person_id, relationship) VALUES(1, 3, 'anya');
+INSERT INTO parent(person_id, parent_person_id, relationship) VALUES(1, 2, 'apa');
 INSERT INTO parent(person_id, parent_person_id, relationship) VALUES(4, 1, 'anya');
 
 DROP TABLE IF EXISTS marriage;
