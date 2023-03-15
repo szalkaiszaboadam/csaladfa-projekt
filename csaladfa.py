@@ -198,7 +198,7 @@ for i in range(len(person)):
 
 
 valasztas = 0
-while valasztas not in range(1,3):
+while valasztas not in range(1,5):
         valasztas = int(input("\n  Melyik lehetőséget választod?: "))
 
 if valasztas == 1:
