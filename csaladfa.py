@@ -176,7 +176,10 @@ pot_parentAnya = parentAnya
 pot_marriagePersonID = marriagePersonID
 pot_gyermekID = gyermekID
 
-print("\n További részletek megtekintése:")
+for i in range(len(person)):
+  if personID == person[i]['person_id']:
+    print(f"\n {person[i]['lastname']} {person[i]['firstname']} csaladtagjairól tovább információkért\n válassz az alábbi lehetőségek közül:")
+
 for i in range(len(person)):
   if parentApa > 0:
     if parentApa == person[i]['person_id']:
