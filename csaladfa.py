@@ -104,30 +104,30 @@ for i in range(len(parent)):
     if parent[i]['relationship'] == "anya":
       parentAnya = parent[i]['parent_person_id']
 
+if personID > 0:
+  if parentApa > 0:
+    for i in range(len(person)):
+      if person[i]['person_id'] == parentApa:
+        if person[i]['died'] == None:
+          print(f" ├─ Apja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
+          #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
+        else:
+          print(f" ├─ Apja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+          #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
+  else:
+    print(" │  Az apa nem szerepel az adatbázisban")
 
-if parentApa > 0:
-  for i in range(len(person)):
-    if person[i]['person_id'] == parentApa:
-      if person[i]['died'] == None:
-        print(f" ├─ Apja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
-        #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
-      else:
-        print(f" ├─ Apja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
-        #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
-'''else:
-  print(" │  Az apa nem szerepel az adatbázisban")'''
-
-if parentAnya > 0:
-  for i in range(len(person)):
-    if person[i]['person_id'] == parentAnya:
-      if person[i]['died'] == None:
-        print(f" ├─ Anyja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
-        #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
-      else:
-        print(f" ├─ Anyja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
-        #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
-'''else:
-  print(" │  Az anya nem szerepel az adatbázisban")'''  
+  if parentAnya > 0:
+    for i in range(len(person)):
+      if person[i]['person_id'] == parentAnya:
+        if person[i]['died'] == None:
+          print(f" ├─ Anyja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - )")
+          #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
+        else:
+          print(f" ├─ Anyja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+          #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
+  else:
+    print(" │  Az anya nem szerepel az adatbázisban")
     
 
 marriageID = 0
@@ -168,7 +168,7 @@ if gyermekID > 0:
       else:
         print(f" │\n └─ Gyermeke: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
         #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
-
+ 
 
 
 pot_parentApa = parentApa
