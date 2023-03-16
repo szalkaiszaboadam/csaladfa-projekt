@@ -325,15 +325,6 @@ if valasztas == 2:
         #pot_parentAnya = person[i]['person_id']
   else:
     print("       Az általad megadott személy nem szerepel az adatbázisunkban!")
-  '''while True:
-      csaladn = input("   ├─ Vezetéknév: ")
-      if csaladn:
-        break
-
-    while True:
-      keresztn = input("   └─ Keresztnév: ")
-      if keresztn:
-        break'''
 
 
   parentApa = 0
