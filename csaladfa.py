@@ -42,7 +42,7 @@ print(f"\n{parent}")
 print(f"\n{marriage}")
 print(f"\n{marriagePerson}\n")'''
 
-print("Személy keresése:")
+print("\n Személy keresése az adatbázisunkban:")
 
 csaladn = ''
 keresztn = ''
@@ -83,7 +83,7 @@ if ii < len(person):
       
       personID = person[i]['person_id']
 else:
-  print("       Az általad megadott személy nem szerepel az adatbázisunkban!")
+  print("\n       Az általad megadott személy nem szerepel az adatbázisunkban!\n")
 '''while True:
     csaladn = input("   ├─ Vezetéknév: ")
     if csaladn:
@@ -114,8 +114,8 @@ if parentApa > 0:
       else:
         print(f" ├─ Apja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
         #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
-else:
-  print(" │  Az apa nem szerepel az adatbázisban")
+'''else:
+  print(" │  Az apa nem szerepel az adatbázisban")'''
 
 if parentAnya > 0:
   for i in range(len(person)):
@@ -126,8 +126,8 @@ if parentAnya > 0:
       else:
         print(f" ├─ Anyja: {person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
         #print(f" │\t\t└─ Születés helye: {person[i]['placeofbirth']}\n │\t\t          └─ ideje: {person[i]['born']}")
-else:
-  print(" │  Az anya nem szerepel az adatbázisban")  
+'''else:
+  print(" │  Az anya nem szerepel az adatbázisban")'''  
     
 
 marriageID = 0
@@ -196,8 +196,9 @@ for i in range(len(person)):
 
 
 valasztas = 0
-while valasztas not in range(1,5):
-        valasztas = int(input("\n  Melyik lehetőséget választod?: "))
+if personID > 0:
+  while valasztas not in range(1,5):
+          valasztas = int(input("\n  Melyik lehetőséget választod?: "))
 
 if valasztas == 1:
   #pot_parentApa = 0
