@@ -211,7 +211,7 @@ if valasztas == 1:
           print(f" │ ├─ Foglalkozása: {person[i]['job']}")
           print(f" │ └─ Neme: {person[i]['gender']}\n │")
         else:
-          print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+          print(f"\n{person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
           print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
           print(f" │ ├─ Foglalkozása: {person[i]['job']} ")
           print(f" │ ├─ Neme: {person[i]['gender']} ")
@@ -316,7 +316,7 @@ if valasztas == 2:
           print(f" │ ├─ Foglalkozása: {person[i]['job']}")
           print(f" │ └─ Neme: {person[i]['gender']}\n │")
         else:
-          print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+          print(f"\n{person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
           print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
           print(f" │ ├─ Foglalkozása: {person[i]['job']} ")
           print(f" │ ├─ Neme: {person[i]['gender']} ")
@@ -412,7 +412,7 @@ if valasztas == 3:
           print(f" │ ├─ Foglalkozása: {person[i]['job']}")
           print(f" │ └─ Neme: {person[i]['gender']}\n │")
         else:
-          print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+          print(f"\n{person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
           print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
           print(f" │ ├─ Foglalkozása: {person[i]['job']} ")
           print(f" │ ├─ Neme: {person[i]['gender']} ")
@@ -517,7 +517,7 @@ if valasztas == 4:
           print(f" │ ├─ Foglalkozása: {person[i]['job']}")
           print(f" │ └─ Neme: {person[i]['gender']}\n │")
         else:
-          print(f"\n{csaladn} {keresztn} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
+          print(f"\n{person[i]['lastname']} {person[i]['firstname']} ({person[i]['born'][:4]} - {person[i]['died'][:4]})")
           print(f" │ ├─ Születés helye: {person[i]['placeofbirth']}\n │ │        └─ ideje: {person[i]['born']}")
           print(f" │ ├─ Foglalkozása: {person[i]['job']} ")
           print(f" │ ├─ Neme: {person[i]['gender']} ")
