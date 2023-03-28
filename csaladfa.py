@@ -42,10 +42,18 @@ print(f"\n{parent}")
 print(f"\n{marriage}")
 print(f"\n{marriagePerson}\n")'''
 
+print("\nAz adatbázisban szereplő személyek nevei:\n ")
+for i in range(len(person)):
+  print(" " + person[i]['lastname'] + " "+  person[i]['firstname'])
+
+
+
 print("\n Személy keresése az adatbázisunkban:")
 
 csaladn = ''
 keresztn = ''
+
+
 
 while True:
     csaladn = input("   ├─ Vezetéknév: ")
